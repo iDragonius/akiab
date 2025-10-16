@@ -1,0 +1,15 @@
+{
+  "pages": {
+    "/about-us/page": [
+      "static/chunks/02ad71ef7c82c9dd.js",
+      "static/chunks/b0508458b3457945.js",
+      "static/chunks/933e3eccfecc8c8c.css",
+      "static/chunks/3e798c7d36bd5ce5.js",
+      "static/chunks/9a83575a05bf2f05.js",
+      "static/chunks/f5e48c5c32c1d748.js",
+      "static/chunks/be02f6ca1013845a.js",
+      "static/chunks/efc36813236a3056.js",
+      "static/chunks/turbopack-323a57c59a96a918.js"
+    ]
+  }
+}

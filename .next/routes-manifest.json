@@ -1,0 +1,192 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/activities/[categoryId]/[categoryKey]",
+      "regex": "^/activities/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcategoryId": "nxtPcategoryId",
+        "nxtPcategoryKey": "nxtPcategoryKey"
+      },
+      "namedRegex": "^/activities/(?<nxtPcategoryId>[^/]+?)/(?<nxtPcategoryKey>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/news/[id]/[slug]",
+      "regex": "^/news/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/news/(?<nxtPid>[^/]+?)/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/partners/[id]/[slug]",
+      "regex": "^/partners/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/partners/(?<nxtPid>[^/]+?)/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/trainings/[id]/[slug]",
+      "regex": "^/trainings/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid",
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/trainings/(?<nxtPid>[^/]+?)/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about-us",
+      "regex": "^/about\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about\\-us(?:/)?$"
+    },
+    {
+      "page": "/academy",
+      "regex": "^/academy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/academy(?:/)?$"
+    },
+    {
+      "page": "/announcements",
+      "regex": "^/announcements(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/announcements(?:/)?$"
+    },
+    {
+      "page": "/bonus-cards",
+      "regex": "^/bonus\\-cards(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/bonus\\-cards(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/gallery/images",
+      "regex": "^/gallery/images(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gallery/images(?:/)?$"
+    },
+    {
+      "page": "/gallery/videos",
+      "regex": "^/gallery/videos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gallery/videos(?:/)?$"
+    },
+    {
+      "page": "/IBN-2022",
+      "regex": "^/IBN\\-2022(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/IBN\\-2022(?:/)?$"
+    },
+    {
+      "page": "/news",
+      "regex": "^/news(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/news(?:/)?$"
+    },
+    {
+      "page": "/our-services",
+      "regex": "^/our\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/our\\-services(?:/)?$"
+    },
+    {
+      "page": "/our-services/b2b",
+      "regex": "^/our\\-services/b2b(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/our\\-services/b2b(?:/)?$"
+    },
+    {
+      "page": "/our-services/b2c",
+      "regex": "^/our\\-services/b2c(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/our\\-services/b2c(?:/)?$"
+    },
+    {
+      "page": "/our-services/marketing",
+      "regex": "^/our\\-services/marketing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/our\\-services/marketing(?:/)?$"
+    },
+    {
+      "page": "/our-services/social-activities",
+      "regex": "^/our\\-services/social\\-activities(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/our\\-services/social\\-activities(?:/)?$"
+    },
+    {
+      "page": "/partners",
+      "regex": "^/partners(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/partners(?:/)?$"
+    },
+    {
+      "page": "/team",
+      "regex": "^/team(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/team(?:/)?$"
+    },
+    {
+      "page": "/trainings",
+      "regex": "^/trainings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/trainings(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
