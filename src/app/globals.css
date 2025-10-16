@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #3b99e0;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --font-poppins: var(--font-poppins);
+}
+
+
+
+.box {
+  @apply min-[1440px]:w-[1200] mx-auto ;
+}
