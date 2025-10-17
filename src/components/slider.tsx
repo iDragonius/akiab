@@ -64,7 +64,7 @@ export const Slider = ({
                     "flex justify-center items-center max-sm:px-2 max-sm:text-[16px] max-sm:py-1 px-5 py-2 bg-primary text-white rounded-[10px] text-[20px] w-[200px] font-medium"
                   }
                 >
-                  Ərfalı
+                  Ətraflı
                 </Link>
               </div>
             )}
