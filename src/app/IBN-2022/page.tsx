@@ -86,13 +86,15 @@ export default async function Page() {
         >
           Tərəfdaşlar
         </h2>
-        <div className={"grid grid-cols-5 gap-6 items-center"}>
+        <div
+          className={"grid grid-cols-5 gap-6 items-center  max-sm:grid-cols-1"}
+        >
           {partners.data.map((partner) => (
             <Link
               href={`/partners/${partner.documentId}/${slug(partner.name)}`}
               key={partner.id}
               className={
-                "border border-gray-200 flex flex-col items-center justify-center w-full h-full rounded-[24px] transition-all ease-in-out hover:border-primary w-max"
+                "border border-gray-200 flex flex-col items-center justify-center w-full h-full rounded-[24px] transition-all ease-in-out hover:border-primary"
               }
             >
               <Image

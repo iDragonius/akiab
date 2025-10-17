@@ -6,12 +6,16 @@ export default function Page() {
     <div className={"box"}>
       <h1
         className={
-          "text-center text-primary font-semibold text-[32px] my-[50px]"
+          "text-center text-primary font-semibold text-[32px] my-[50px] max-sm:text-[24px]"
         }
       >
         Xidmətlərimiz
       </h1>
-      <div className={"grid grid-cols-5 gap-5 w-full"}>
+      <div
+        className={
+          "grid grid-cols-5 gap-5 w-full max-lg:grid-cols-3 max-sm:grid-cols-1"
+        }
+      >
         <div className={"group border border-gray-200"}>
           <div
             className={

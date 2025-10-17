@@ -38,7 +38,11 @@ export default async function Page() {
       >
         İdarə Heyəti
       </h1>
-      <div className={"grid grid-cols-3 gap-5 w-full"}>
+      <div
+        className={
+          "grid grid-cols-3 gap-5 w-full max-sm:grid-cols-1 max-sm:gap-8"
+        }
+      >
         {data.map((team) => (
           <div key={team.id} className={"flex flex-col items-center group "}>
             <Image

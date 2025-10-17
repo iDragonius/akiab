@@ -1,3 +1,22 @@
-module.exports=[5650,a=>{a.v("/_next/static/media/favicon.0b3bf435.ico")},14128,a=>{"use strict";a.s(["default",()=>b]);let b={src:a.i(5650).default,width:256,height:256}}];
+module.exports = [
+"[project]/Developer/projects/akiab/client/src/app/favicon.ico (static in ecmascript)", ((__turbopack_context__) => {
+
+__turbopack_context__.v("/_next/static/media/favicon.0b3bf435.ico");}),
+"[project]/Developer/projects/akiab/client/src/app/favicon.ico.mjs { IMAGE => \"[project]/Developer/projects/akiab/client/src/app/favicon.ico (static in ecmascript)\" } [app-rsc] (structured image object, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Developer$2f$projects$2f$akiab$2f$client$2f$src$2f$app$2f$favicon$2e$ico__$28$static__in__ecmascript$29$__ = __turbopack_context__.i("[project]/Developer/projects/akiab/client/src/app/favicon.ico (static in ecmascript)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$Developer$2f$projects$2f$akiab$2f$client$2f$src$2f$app$2f$favicon$2e$ico__$28$static__in__ecmascript$29$__["default"],
+    width: 256,
+    height: 256
+};
+}),
+];
 
 //# sourceMappingURL=Developer_projects_akiab_client_src_app_da1647a7._.js.map

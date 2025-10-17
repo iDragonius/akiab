@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { slug } from "@/utils/slug";
 import Image from "next/image";
+import { ImagesSlider } from "@/components/images-slider";
 
 async function getNewsById(id: string): Promise<{
   data: {
@@ -72,9 +73,9 @@ export default async function Page({
   if (!data) notFound();
   return (
     <div className={"box"}>
-      <div className={"flex justify-between mt-[50px] gap-10"}>
+      <div className={"flex justify-between mt-[50px] gap-10 max-sm:flex-col"}>
         <div>
-          <div className={" text-[20px] "}>
+          <div className={" text-[20px] max-sm:text-[12px]  "}>
             <Link href={"/"} className={"text-primary"}>
               Ana səhifə
             </Link>
@@ -85,21 +86,20 @@ export default async function Page({
             <span className={"mx-2"}>/</span>
             <span className={"text-gray-500"}>{data.title}</span>
           </div>
-          <h1 className={" text-primary font-semibold text-[40px] "}>
+          <h1
+            className={
+              " text-primary font-semibold text-[40px] max-sm:text-[28px] my-4"
+            }
+          >
             {data.title}
           </h1>
           <p className={"text-[14px] font-semibold text-primary"}>
             {" "}
             {data?.publishDate?.split("-")?.reverse()?.join(".")}
           </p>
-
-          <Image
-            src={process.env.NEXT_PUBLIC_PUBLIC_URL + data.image[0].url}
-            alt={""}
-            width={500}
-            height={500}
-            className={"rounded-[12px] w-full my-8"}
-          />
+          <div className={"w-full my-8"}>
+            <ImagesSlider data={data.image} />
+          </div>
 
           <div>
             {data.content.map((content, k) => (
@@ -114,14 +114,14 @@ export default async function Page({
             ))}
           </div>
         </div>
-        <div className={"min-w-[400px]"}>
+        <div className={"min-w-[400px] max-sm:min-w-full"}>
           <h2 className={"text-primary text-[24px]"}>Bənzər paylaşımlar</h2>
           <div className={"flex flex-col gap-3 mt-4"}>
             {otherNewsData.data.map((newsElement) => (
               <Link
                 key={newsElement.id}
                 href={`/news/${newsElement.documentId}/${slug(newsElement.title)}`}
-                className={"flex gap-4"}
+                className={"flex gap-4 max-sm:flex-col max-sm:w-full"}
               >
                 <Image
                   src={
@@ -134,8 +134,8 @@ export default async function Page({
                   className={"rounded-[12px]"}
                 />
 
-                <div>
-                  <h3>{newsElement.title}</h3>
+                <div className={""}>
+                  <h3 className={""}>{newsElement.title}</h3>
                   <p className={"text-[12px] mt-1"}>
                     {newsElement?.publishDate?.split("-")?.reverse()?.join(".")}
                   </p>

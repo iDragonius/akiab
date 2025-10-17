@@ -4,8 +4,10 @@ import Link from "next/link";
 export default function Page() {
   return (
     <div className={"box mt-[50px]"}>
-      <div className={"flex justify-between items-center gap-5"}>
-        <div className={"w-1/2"}>
+      <div
+        className={"flex justify-between items-center gap-5 max-sm:flex-col"}
+      >
+        <div className={"w-1/2 max-sm:w-full"}>
           <h1 className={"text-[54px] text-primary font-semibold"}>
             Marketing
           </h1>
@@ -15,8 +17,8 @@ export default function Page() {
             şirkətlərin reklamını və tanıtımını həyata keçirir.
           </p>
         </div>
-        <div className={"w-1/2 flex flex-col gap-5"}>
-          <div className={"flex gap-10"}>
+        <div className={"w-1/2 flex flex-col gap-5 max-sm:w-full"}>
+          <div className={"flex gap-10 max-sm:flex-col max-sm:gap-5"}>
             <Image
               src={"/marketing1.png"}
               alt={"marketing"}
@@ -42,7 +44,7 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className={"flex gap-10"}>
+          <div className={"flex gap-10 max-sm:flex-col max-sm:gap-5"}>
             <Image
               src={"/marketing1.png"}
               alt={"marketing"}
@@ -60,7 +62,7 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className={"flex gap-10"}>
+          <div className={"flex gap-10 max-sm:flex-col max-sm:gap-5"}>
             <Image
               src={"/marketing2.png"}
               alt={"marketing"}
@@ -79,7 +81,7 @@ export default function Page() {
               </p>
             </div>
           </div>
-          <div className={"flex gap-10"}>
+          <div className={"flex gap-10 max-sm:flex-col max-sm:gap-5"}>
             <Image
               src={"/marketing3.png"}
               alt={"marketing"}

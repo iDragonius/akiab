@@ -71,7 +71,7 @@ export default async function Page({
     <div className={""}>
       <div className={"bg-gray-100 py-10 "}>
         <div className={"box"}>
-          <div className={"flex gap-5"}>
+          <div className={"flex gap-5 max-sm:flex-col"}>
             <Image
               src={process.env.NEXT_PUBLIC_PUBLIC_URL + data.logo.url}
               alt={data.name}
@@ -128,7 +128,11 @@ export default async function Page({
           Digər Tərəfdaşlar
         </h2>
 
-        <div className={"grid grid-cols-5 gap-6 items-center my-10"}>
+        <div
+          className={
+            "grid grid-cols-5 gap-6 items-center my-10 max-sm:grid-cols-1"
+          }
+        >
           {otherPartnersData.data
             .filter((i) => i.id !== data.id)
             .map((partner) => (

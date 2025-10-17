@@ -38,24 +38,28 @@ export default async function Page() {
         />
         <h1
           className={
-            "text-[40px] text-white absolute top-[170px] right-32 font-semibold"
+            "text-[40px] text-white absolute top-[170px] right-32 font-semibold max-sm:hidden"
           }
         >
           Haqqımızda
         </h1>
       </div>
       <div className={"box mt-[50px]"}>
-        <h2 className={"text-primary text-[32px] underline font-bold"}>
+        <h2
+          className={
+            "text-primary text-[32px] max-sm:text-[24px] underline font-bold"
+          }
+        >
           {data.title}
         </h2>
         <p
           className={
-            "bg-primary text-white rounded-[32px] p-5 text-[18px] mt-5"
+            "bg-primary text-white rounded-[32px] p-5 text-[18px] mt-5 max-sm:text-[16px]"
           }
         >
           {data.description}
         </p>
-        <div className={"flex gap-5 mt-10 "}>
+        <div className={"flex gap-5 mt-10 max-sm:flex-col "}>
           <div
             className={
               "w-full border  border-gray-200 rounded-[24px] py-3 px-4  transition-all ease-in-out hover:shadow-2xl cursor-pointer "

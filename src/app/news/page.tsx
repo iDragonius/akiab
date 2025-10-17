@@ -27,6 +27,7 @@ async function getNews(): Promise<{
   url.searchParams.append("populate[1]", "seo.shareImage");
   url.searchParams.append("populate[2]", "image");
   url.searchParams.append("populate[3]", "activity_category");
+  url.searchParams.set("pagination[limit]", "500");
   url.searchParams.set("sort", "publishDate:desc");
   const res = await fetch(url.toString(), {
     next: { revalidate: 600 },
@@ -48,7 +49,11 @@ export default async function Page() {
       >
         Xəbərlər
       </h1>
-      <div className={"grid grid-cols-4 gap-5 w-full"}>
+      <div
+        className={
+          "grid grid-cols-4 gap-5 w-full max-sm:grid-cols-1 max-sm:gap-8"
+        }
+      >
         {data.map((newsElement) => (
           <div key={newsElement.id} className={"border border-gray-200"}>
             <Image

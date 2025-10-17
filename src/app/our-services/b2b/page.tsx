@@ -11,7 +11,7 @@ export default function Page() {
           height={315}
           width={400}
           style={{ borderRadius: "50% 20% / 10% 40%" }}
-          className={"min-w-[400px]"}
+          className={"min-w-[400px] max-sm:hidden"}
         />
         <div>
           <h1 className={"text-[32px] font-semibold text-primary mb-4"}>
@@ -33,7 +33,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className={"flex gap-10 justify-between  mt-10"}>
+      <div className={"flex gap-10 justify-between  mt-10 max-sm:flex-col"}>
         <div
           className={
             "text-white bg-[#1497faa4] p-6 rounded-[12px] flex-1 flex flex-col items-center justify-center shadow-lg"
@@ -44,6 +44,7 @@ export default function Page() {
             alt={"standart"}
             width={100}
             height={100}
+            className={""}
           />
           <h2 className={"text-[40px] font-semibold mt-8"}>Standart</h2>
         </div>

@@ -30,7 +30,11 @@ export default async function Page() {
       >
         Bonus Kartları{" "}
       </h1>
-      <div className={"grid grid-cols-4 gap-5 w-full"}>
+      <div
+        className={
+          "grid grid-cols-4 gap-5 w-full max-sm:grid-cols-1  max-sm:gap-7"
+        }
+      >
         {data.map((bonusCard) => (
           <div
             key={bonusCard.id}

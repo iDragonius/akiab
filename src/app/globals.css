@@ -14,5 +14,5 @@
 
 
 .box {
-  @apply min-[1440px]:w-[1200] mx-auto ;
+  @apply min-[1440px]:w-[1200] mx-auto  px-5;
 }

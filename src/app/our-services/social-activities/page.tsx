@@ -39,7 +39,7 @@ export default async function Page() {
         bir sıra sosial fəaliyyətlər də təşkil edir. Sosial fəaliyyətlər Kişilər
         Klubu ilə birgə keçirilir.
       </p>
-      <div className={"grid grid-cols-4 gap-5 w-full"}>
+      <div className={"grid grid-cols-4 gap-5 w-full max-sm:grid-cols-1"}>
         {data.map((announcement) => (
           <div
             key={announcement.id}

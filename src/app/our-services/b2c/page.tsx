@@ -12,13 +12,13 @@ export default function Page() {
         kartlarıdır.
       </p>
 
-      <div className={"flex justify-between gap-20"}>
+      <div className={"flex justify-between gap-20 max-sm:flex-col"}>
         <Image
           src={"/b2c1.png"}
           alt={"b2b"}
           height={315}
           width={400}
-          className={"min-w-[400px]"}
+          className={"min-w-[400px] max-sm:min-w-full"}
         />
         <div>
           <h1 className={"text-[32px] font-semibold text-primary mb-2"}>
@@ -46,7 +46,11 @@ export default function Page() {
         Mobil tətbiq kart sahibi olan bütün müştərilərin rahat istifadəsi üçün
         nəzərdə tutulmuşdur. Tətbiqin əsas funksiyaları aşağıdakılardır.
       </p>
-      <div className={"flex justify-center gap-40 mt-20 items-center"}>
+      <div
+        className={
+          "flex justify-center gap-40 mt-20 items-center max-sm:flex-col"
+        }
+      >
         <Image
           src={"/b2c2.webp"}
           alt={"b2b"}
@@ -54,7 +58,7 @@ export default function Page() {
           width={400}
           className={"min-w-[250px] w-[250px]"}
         />
-        <div className={"max-w-[500px] w-[500px]"}>
+        <div className={"max-w-[500px] w-[500px] max-sm:w-full"}>
           <h1 className={"text-[32px] font-semibold text-primary mb-2"}>
             Online kataloq
           </h1>
@@ -65,8 +69,12 @@ export default function Page() {
           </p>
         </div>
       </div>
-      <div className={"flex justify-center gap-40 mt-20 items-center"}>
-        <div className={"max-w-[500px] w-[500px]"}>
+      <div
+        className={
+          "flex justify-center gap-40 mt-20 items-center max-sm:flex-col"
+        }
+      >
+        <div className={"max-w-[500px] w-[500px] max-sm:w-full"}>
           <h1 className={"text-[32px] font-semibold text-primary mb-2"}>
             Şirkətlər haqqında məlumat
           </h1>
@@ -85,7 +93,11 @@ export default function Page() {
           className={"min-w-[250px] w-[250px]"}
         />
       </div>
-      <div className={"flex justify-center gap-40 mt-20 items-center"}>
+      <div
+        className={
+          "flex justify-center gap-40 mt-20 items-center max-sm:flex-col"
+        }
+      >
         <Image
           src={"/b2c4.webp"}
           alt={"b2b"}
@@ -93,7 +105,7 @@ export default function Page() {
           width={400}
           className={"min-w-[250px] w-[250px]"}
         />
-        <div className={"max-w-[500px] w-[500px]"}>
+        <div className={"max-w-[500px] w-[500px] max-sm:w-full"}>
           <h1 className={"text-[32px] font-semibold text-primary mb-2"}>
             Ətraflı axtarış
           </h1>
@@ -103,8 +115,12 @@ export default function Page() {
           </p>
         </div>
       </div>
-      <div className={"flex justify-center gap-40 mt-20 items-center"}>
-        <div className={"max-w-[500px] w-[500px]"}>
+      <div
+        className={
+          "flex justify-center gap-40 mt-20 items-center max-sm:flex-col"
+        }
+      >
+        <div className={"max-w-[500px] w-[500px] max-sm:w-full"}>
           <h1 className={"text-[32px] font-semibold text-primary mb-2"}>
             Sorğu-cavab
           </h1>

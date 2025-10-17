@@ -10,6 +10,8 @@ import { BlocksContent, Seo } from "@/types";
 import { Slider } from "@/components/slider";
 import Link from "next/link";
 import { slug } from "@/utils/slug";
+import { PartnersSlider } from "@/components/partners-slider";
+import { ActivitiesSlider } from "@/components/activities-slider";
 
 async function getHome(): Promise<{
   data: {
@@ -47,6 +49,7 @@ async function getHome(): Promise<{
       id: number;
       title: string | null;
       url: string | null;
+      description: string | null;
       image: {
         url: string;
       };
@@ -93,7 +96,7 @@ async function getPartners(): Promise<{
 
   url.searchParams.append("populate[0]", "logo");
 
-  url.searchParams.set("pagination[limit]", "6");
+  url.searchParams.set("pagination[limit]", "30");
 
   const res = await fetch(url.toString(), {
     next: { revalidate: 600 },
@@ -150,11 +153,38 @@ async function getTeam(): Promise<{
   return res.json();
 }
 
+async function getActivities(): Promise<{
+  data: {
+    title: string;
+    image: {
+      url: string;
+    }[];
+    id: number;
+    content: BlocksContent;
+    description: string;
+    seo: Seo;
+    publishDate: string;
+    documentId: string;
+  }[];
+}> {
+  const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/activities`);
+
+  url.searchParams.append("populate[1]", "image");
+  url.searchParams.append("populate[2]", "seo");
+  url.searchParams.set("sort", "publishDate:desc");
+  const res = await fetch(url.toString(), {
+    next: { revalidate: 600 },
+  });
+
+  if (!res.ok) throw new Error("Failed to fetch news");
+  return res.json();
+}
 export default async function Home() {
   const { data } = await getHome();
   const partners = await getPartners();
   const announcements = await getAnnouncements();
   const team = await getTeam();
+  const activities = await getActivities();
 
   console.log(data);
   return (
@@ -162,18 +192,26 @@ export default async function Home() {
       <Slider data={data.slider} />
       <div className={"box mt-[50px]"}>
         <h2
-          className={"text-[32px] font-semibold text-primary text-center mb-5"}
+          className={
+            " max-sm:text-[24px] text-[32px] font-semibold text-primary text-center mb-5"
+          }
         >
           XİDMƏTLƏRİMİZ
         </h2>
-        <p className={"text-center text-[#444444]"}>{data.ourservicesTitle}</p>
-        <div className={"flex flex-wrap gap-5  justify-center mt-6"}>
+        <p className={"text-center  max-sm:text-[14px]  text-[#444444]"}>
+          {data.ourservicesTitle}
+        </p>
+        <div
+          className={
+            "flex flex-wrap gap-5  justify-center mt-6 max-sm:flex-col"
+          }
+        >
           {data.ourservicesList.map((service) => (
             <Link
               key={service.id}
               href={service.url}
               className={
-                "w-[32%] shadow-[0px_0px_10px_rgba(19,174,246,0.709)] flex flex-col items-center justify-center p-5 transition-all ease-in-out hover:bg-primary group rounded-[10px]"
+                "w-[32%] shadow-[0px_0px_10px_rgba(19,174,246,0.709)] flex flex-col items-center justify-center p-5 transition-all ease-in-out hover:bg-primary group rounded-[10px] max-sm:w-full"
               }
             >
               <h3
@@ -203,20 +241,22 @@ export default async function Home() {
       </div>
       <div className={"box mt-[50px]"}>
         <h2
-          className={"text-[32px] font-semibold text-primary text-center mb-5"}
+          className={
+            "text-[32px]  max-sm:text-[24px] font-semibold text-primary text-center mb-5"
+          }
         >
           BİZ KİMİK?
         </h2>
-        <p className={"text-center text-[#444444] mb-4"}>
+        <p className={"text-center max-sm:text-[14px] text-[#444444] mb-4"}>
           {data.whoareweTitle}
         </p>
-        <div className={"flex gap-5"}>
+        <div className={"flex gap-5 max-sm:flex-col"}>
           <Image
             src={process.env.NEXT_PUBLIC_PUBLIC_URL + data.whoareweImage.url}
             alt={"Who we are"}
             height={370}
             width={500}
-            className={"w-1/2 h-[370px] object-cover"}
+            className={"w-1/2 h-[370px] object-cover max-sm:w-full"}
           />
           <div className={"flex flex-col gap-2"}>
             {data.whoareweList.map((item) => (
@@ -240,7 +280,7 @@ export default async function Home() {
             ))}
           </div>
         </div>
-        <div className={"mt-[40px] flex gap-5 justify-between"}>
+        <div className={"mt-[40px] flex gap-5 justify-between max-sm:flex-col"}>
           {data.whoareweCards.map((card, i) => (
             <div
               key={card.id}
@@ -257,8 +297,8 @@ export default async function Home() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M8.66663 0L9.33331 0.666656L9.33328 2H13.3333V11.3333H0V2H4V0.666656L4.66663 0H8.66663ZM1.33328 6.90422V10H12V6.90422C10.6679 7.28534 9.33441 7.52372 7.99997 7.61903V8.66666H5.33331V7.61906C3.99888 7.52375 2.66534 7.28538 1.33331 6.90425M12 3.33337H1.33331V5.51356C3.11369 6.06044 4.89081 6.33337 6.66663 6.33337C8.44247 6.33337 10.2196 6.06044 12 5.51356V3.33337ZM8 1.33337H5.33334V2H8V1.33337Z"
                     fill="#3B99E0"
                   />
@@ -275,27 +315,27 @@ export default async function Home() {
                   <path
                     d="M1 21H21"
                     stroke="#3B99E0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M3 3.182L11 1L19 3.182V6H3V3.182Z"
                     stroke="#3B99E0"
-                    stroke-width="2"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M4 6V18M7.5 6V18M11 6V18M14.5 6V18M18 6V18"
                     stroke="#3B99E0"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M2.5 18H19.5V21H2.5V18Z"
                     stroke="#3B99E0"
-                    stroke-width="2"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
                   />
                 </svg>
               )}{" "}
@@ -328,44 +368,40 @@ export default async function Home() {
           ))}
         </div>
       </div>
+      <div className={"w-full bg-primary"}>
+        <div className={"box mt-[50px] py-10"}>
+          <h1
+            className={
+              "text-center  max-sm:text-[24px] font-semibold text-[32px] mb-[20px] text-white"
+            }
+          >
+            FƏALİYYƏTLƏRİMİZ
+          </h1>
+
+          <ActivitiesSlider data={activities.data} />
+        </div>
+      </div>
+
       <div className={"box mt-[50px]"}>
         <h1
           className={
-            "text-center text-primary font-semibold text-[32px] mb-[20px]"
+            "text-center  max-sm:text-[24px] text-primary font-semibold text-[32px] mb-[20px]"
           }
         >
           TƏRƏFDAŞLARIMIZ
         </h1>
-        <div className={"flex gap-4 justify-between"}>
-          {partners.data.map((partner) => (
-            <Link
-              href={`/partners/${partner.documentId}/${slug(partner.name)}`}
-              key={partner.id}
-              className={
-                "border border-gray-200 flex flex-col items-center justify-center w-full h-full rounded-[24px] transition-all ease-in-out hover:border-primary "
-              }
-            >
-              <Image
-                src={process.env.NEXT_PUBLIC_PUBLIC_URL + partner.logo.url}
-                alt={partner.name}
-                width={300}
-                height={300}
-                className={"rounded-[24px] w-full   h-[200px] object-contain"}
-              />
-              <p className={"text-[15px] font-medium my-1"}>{partner.name}</p>
-            </Link>
-          ))}
-        </div>
+
+        <PartnersSlider data={partners.data} />
       </div>
       <div className={"box mt-[50px]"}>
         <h1
           className={
-            "text-center text-primary font-semibold text-[32px] mb-[20px]"
+            "text-center   max-sm:text-[24px] text-primary font-semibold text-[32px] mb-[20px]"
           }
         >
           ELANLAR
         </h1>
-        <div className={"grid grid-cols-3 gap-5 w-full"}>
+        <div className={"grid grid-cols-3 gap-5 w-full max-sm:grid-cols-1"}>
           {announcements.data.map((announcement) => (
             <div key={announcement.id} className={"border border-gray-200"}>
               <Image
@@ -416,12 +452,12 @@ export default async function Home() {
       <div className={"box mt-[50px]"}>
         <h1
           className={
-            "text-center text-primary font-semibold text-[32px] mb-[10px]"
+            "text-center text-primary font-semibold text-[32px] mb-[10px] ax-sm:text-[24px]"
           }
         >
           İDARƏ HEYƏTİ
         </h1>
-        <div className={"grid grid-cols-3 gap-5 w-full "}>
+        <div className={"grid grid-cols-3 gap-5 w-full  max-sm:grid-cols-1"}>
           {team.data.map((teamEl) => (
             <div
               key={teamEl.id}

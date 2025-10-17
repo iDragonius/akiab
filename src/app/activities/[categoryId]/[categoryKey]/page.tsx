@@ -59,7 +59,11 @@ export default async function Page({
         >
           {data.name}
         </h1>
-        <div className={"grid grid-cols-4 gap-5 w-full"}>
+        <div
+          className={
+            "grid grid-cols-4 gap-5 w-full max-sm:grid-cols-1 max-sm:gap-8"
+          }
+        >
           {data.activities.map((newsElement) => (
             <div key={newsElement.id} className={"border border-gray-200"}>
               <Image

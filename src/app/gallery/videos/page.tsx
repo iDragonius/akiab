@@ -32,7 +32,11 @@ export default async function Page() {
       >
         Videolar{" "}
       </h1>
-      <div className={"grid grid-cols-3 gap-6 w-full"}>
+      <div
+        className={
+          "grid grid-cols-3 gap-6 w-full max-sm:grid-cols-1 max-sm:gap-7"
+        }
+      >
         {data.map((video) => (
           <div
             key={video.id}

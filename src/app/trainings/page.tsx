@@ -42,7 +42,11 @@ export default async function Page() {
       >
         Təlimlər
       </h1>
-      <div className={"grid grid-cols-4 gap-5 w-full"}>
+      <div
+        className={
+          "grid grid-cols-4 gap-5 w-full max-sm:grid-cols-1 max-sm:gap-8"
+        }
+      >
         {data.map((training) => (
           <div key={training.id} className={"border border-gray-200"}>
             <Image

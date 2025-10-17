@@ -37,7 +37,7 @@ async function getPartners(): Promise<{
 }> {
   const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/partners`);
   url.searchParams.append("populate[0]", "logo");
-  url.searchParams.set("pagination[limit]", "3");
+  url.searchParams.set("pagination[limit]", "5");
   const res = await fetch(url.toString(), {
     next: { revalidate: 600 },
   });
@@ -84,17 +84,19 @@ export default async function Page() {
         >
           Tərəfdaşlar
         </h2>
-        <div className={"grid grid-cols-5 gap-6 items-center"}>
+        <div
+          className={"grid grid-cols-5 gap-6 items-center max-sm:grid-cols-1"}
+        >
           {partners.data.map((partner) => (
             <Link
               href={`/partners/${partner.documentId}/${slug(partner.name)}`}
               key={partner.id}
               className={
-                "border border-gray-200 flex flex-col items-center justify-center w-full h-full rounded-[24px] transition-all ease-in-out hover:border-primary w-max"
+                "border border-gray-200 flex flex-col items-center justify-center w-full h-full rounded-[24px] transition-all ease-in-out hover:border-primary "
               }
             >
               <Image
-                src={"http://localhost:1337" + partner.logo.url}
+                src={process.env.NEXT_PUBLIC_PUBLIC_URL + partner.logo.url}
                 alt={partner.name}
                 width={300}
                 height={300}

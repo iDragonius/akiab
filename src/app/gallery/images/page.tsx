@@ -34,7 +34,11 @@ export default async function Page() {
       >
         Şəkillər{" "}
       </h1>
-      <div className={"grid grid-cols-4 gap-5 w-full"}>
+      <div
+        className={
+          "grid grid-cols-4 gap-5 w-full max-sm:grid-cols-1  max-sm:gap-7"
+        }
+      >
         {data.map((image, i) => {
           if (image.title) {
             return (
