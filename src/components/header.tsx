@@ -79,9 +79,9 @@ export const Header: FC<HeaderProps> = ({ navigation }) => {
                 <path
                   d="M2 2H20M2 8H20M2 14H20"
                   stroke="#3B99E0"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </button>
@@ -298,9 +298,9 @@ const MobileNavigationSubElement = ({
             <path
               d="M1 7L7 1L13 7"
               stroke="#3B99E0"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -421,7 +421,7 @@ const NavigationSubElement = ({
             {data.subs.map((sub) => (
               <Link
                 href={sub.path as string}
-                className={"text-primary text-[15px] "}
+                className={"text-primary  font-medium "}
                 key={sub.id}
               >
                 {sub.label}
