@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 import HeaderServer from "@/app/_server/header-server";

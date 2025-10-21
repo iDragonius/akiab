@@ -129,9 +129,9 @@ export default async function Page({
                     newsElement.image[0].url
                   }
                   alt={""}
-                  width={180}
-                  height={180}
-                  className={"rounded-[12px]"}
+                  width={400}
+                  height={400}
+                  className={"rounded-[12px] min-sm:w-[180px]  max-sm:w-full"}
                 />
 
                 <div className={""}>

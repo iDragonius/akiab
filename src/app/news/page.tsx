@@ -27,7 +27,7 @@ async function getNews(): Promise<{
   url.searchParams.append("populate[1]", "seo.shareImage");
   url.searchParams.append("populate[2]", "image");
   url.searchParams.append("populate[3]", "activity_category");
-  url.searchParams.set("pagination[limit]", "500");
+  url.searchParams.set("pagination[limit]", "1000");
   url.searchParams.set("sort", "publishDate:desc");
   const res = await fetch(url.toString(), {
     next: { revalidate: 600 },

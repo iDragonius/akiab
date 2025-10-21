@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,7 +7,7 @@ import "swiper/css/scrollbar";
 import { BlocksContent, Seo } from "@/types";
 import { Slider } from "@/components/slider";
 import Link from "next/link";
-import { slug } from "@/utils/slug";
+
 import { PartnersSlider } from "@/components/partners-slider";
 import { ActivitiesSlider } from "@/components/activities-slider";
 
