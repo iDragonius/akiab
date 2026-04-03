@@ -79,7 +79,7 @@ export const ActivitiesSlider = ({
                   "text-white bg-primary font-medium mt-3 flex w-max px-4 rounded-[6px]  "
                 }
               >
-                Ətrfalı
+                Ətraflı
               </Link>
             </div>
           </div>

@@ -54,6 +54,7 @@ export default async function Page() {
               alt={""}
               width={300}
               height={300}
+              className={"w-full"}
             />
             <div className={"p-4"}>
               <div className="flex justify-between">
@@ -81,7 +82,7 @@ export default async function Page() {
                   "text-white bg-primary font-medium mt-3 flex w-max px-4 rounded-[6px]   "
                 }
               >
-                Ətrfalı
+                Ətraflı
               </Link>
             </div>
           </div>
