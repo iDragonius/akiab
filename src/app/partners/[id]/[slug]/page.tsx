@@ -77,7 +77,7 @@ export default async function Page({
               alt={data.name}
               width={200}
               height={200}
-              className={"rounded-[6px] w-[200px] h-[200px] object-cover"}
+              className={"rounded-[6px] w-[200px] h-[200px] object-contain"}
             />
             <div>
               <h1 className={"text-[32px] font-semibold text-primary"}>
@@ -148,7 +148,7 @@ export default async function Page({
                   alt={partner.name}
                   width={300}
                   height={300}
-                  className={"rounded-[24px] w-full h-full object-cover"}
+                  className={"rounded-[24px] w-full h-full object-contain"}
                 />
                 <p className={"text-[20px] font-medium my-1"}>{partner.name}</p>
               </Link>

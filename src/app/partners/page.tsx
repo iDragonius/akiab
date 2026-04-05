@@ -19,6 +19,7 @@ async function getPartners(): Promise<{
 }> {
   const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/partners`);
   url.searchParams.append("populate[0]", "logo");
+  url.searchParams.set("sort", "createdAt:desc");
   url.searchParams.set("pagination[limit]", "1500");
   const res = await fetch(url.toString(), {
     next: { revalidate: 600 },

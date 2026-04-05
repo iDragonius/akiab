@@ -48,7 +48,7 @@ export default function Page() {
       </p>
       <div
         className={
-          "flex justify-center gap-40 mt-20 items-center max-sm:flex-col"
+          "flex justify-center gap-40 mt-20 items-center max-sm:flex-col-reverse"
         }
       >
         <Image
@@ -95,7 +95,7 @@ export default function Page() {
       </div>
       <div
         className={
-          "flex justify-center gap-40 mt-20 items-center max-sm:flex-col"
+          "flex justify-center gap-40 mt-20 items-center max-sm:flex-col-reverse"
         }
       >
         <Image
