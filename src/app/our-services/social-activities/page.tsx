@@ -52,7 +52,7 @@ export default async function Page() {
               alt={""}
               width={300}
               height={300}
-              className={"rounded-t-[24px]"}
+              className={"rounded-t-[24px] w-full object-cover"}
             />
             <div className={"p-4"}>
               <h2

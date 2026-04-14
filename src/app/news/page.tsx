@@ -63,7 +63,7 @@ export default async function Page() {
               alt={""}
               width={300}
               height={300}
-              className={"h-[200px]"}
+              className={"h-[200px] w-full object-cover "}
             />
             <div className={"p-4"}>
               <p className={"text-[14px] text-primary mb-3"}>
